@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+	--primary-color: #316B83;
+	--secondary-color: #D5BFBF;
+}
+
+* {
+  box-sizing: border-box;
+	font-family: 'Press Start 2P', cursive;
+	text-align: center;
+}
+
+body {
+	background-color: var(--primary-color);
+	color: var(--secondary-color);
+	height: 100vh;
+	width: 100vw;
+	margin: 0;
+	overflow: hidden;
+	position: relative;
+}
+
+.page-container {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	transition: transform 500ms ease-in-out;
+}
+
+.page {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+}
+
+.btn {
+	background-color: var(--secondary-color);
+	color: var(--primary-color);
+	font-size: 0.7rem;
+	padding: 1rem 2rem;
+	border: none;
+	cursor: pointer;
+}
+
+.choices {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.choice {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 150px;
+	height: 150px;
+	border: solid 2px var(--secondary-color);
+	margin: 1rem;
+	font-size: 0.8rem;
+	cursor: pointer;
+	transition: all 200ms;
+}
+
+.choice:hover {
+	background-color: var(--secondary-color);
+	color: var(--primary-color);
+}
+
+img {
+	display: block;
+	margin: 0 auto;
+	width: 80px;
+	height: 80px;
+	cursor: pointer;
+}
+
+.page:last-child {
+	flex-direction: row;
+	position: relative;
+	min-height: 100vh;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+
+.timer,
+.score {
+	display: inline-block;
+	color: var(--secondary-color);
+	z-index: 1;
+	margin: 1rem;
+}
+
+.insect-img {
+	position: absolute;
+	transition: transform 500ms ease-in-out;
+}
+
+.message {
+	display: none;
+	background-color: var(--primary-color);
+	filter: brightness(70%);
+	opacity: 0.8;
+	color: #fff;
+	position: absolute;
+	width: 100vw;
+	padding: 2rem;
+	line-height: 2rem;
+	z-index: 1;
+	transform: translateY(10rem);
+	animation: moveToDown 500ms ease-in-out;
+}
+
+@keyframes moveToDown {
+	0% {
+		transform: translateY(-1rem);
+	} 100%{
+		transform: translateY(10rem);
+	}
+}
